@@ -1,0 +1,14 @@
+# secrets
+.env
+
+# dependencies
+**/node_modules/
+
+# Playwright output
+test-results/
+playwright-report/
+blob-report/
+part2/playwright/.cache/
+
+# build output
+**/dist/

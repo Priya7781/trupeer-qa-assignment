@@ -1,0 +1,48 @@
+Logging in and opening the editor...
+Captured original script (1035 chars).
+
+Running prompt: "Make this more professional"
+Running prompt: "Add a call to action at the end"
+Running prompt: "Translate to Spanish"
+Running prompt: "Make this script more concise"
+
+=== AI Script Rewrite Validation Results ===
+Original script (1035 chars): "Hello. In this video, I’ll show you how to set up a new Playwright automation project. To begin, create a new folder. Name the folder Playwright Project. Then open that folder in VS Code. Next, go to the terminals. It may take a moment. Once you're ready, run npm init Playwright test. At this point, it will ask for a few configurations. First, it asks whether you want to use TypeScript or JavaScript. In this case, choose TypeScript. Then, when it asks where you want to put your end-to-end tests, select the tests folder. Next, it asks about a GitHub actions workflow. Choose that option, and when prompted, install the Playwright browsers as well. Now it’s initializing the PM project and starting the installation process. This may take some time. Once it’s done, go to the tests folder, and you’ll see the example spec.es file. To run this, use the command px playwright test. You can see it’s running six tests using six workers. This may take a moment. As you can see, the Firefox one failed, while the rest passed. Thank you."
+
+Prompt: "Make this more professional"
+  [PASS] Intent match — The rewrite uses more formal vocabulary, complete sentences, and polished phrasing consistent with a 'more professional' tone request.
+  [PASS] Coherence & grammar — The text is grammatically correct, coherent, and flows logically throughout.
+  [PASS] Information preservation — All original steps and outcomes (folder setup, TypeScript choice, GitHub Actions, test results) are preserved, and even corrects command typos like 'px' to 'npx' and 'spec.es' to 'spec.ts' without losing meaning.
+  [PASS] Meaningful transformation — The wording is substantially reworded with more formal diction and sentence structure, not just superficial synonym swaps.
+  [PASS] Length/scope sanity — The rewritten script is comparable in length to the original, fully complete, and appropriately scoped to the tone-change request.
+  Confidence: 0.90
+  Overall: PASS
+
+Prompt: "Add a call to action at the end"
+  [PASS] Intent match — A clear call to action ('like and subscribe') was added at the end as requested.
+  [PASS] Coherence & grammar — The script is grammatically correct and reads smoothly throughout.
+  [PASS] Information preservation — All original steps and technical details from the tutorial are preserved.
+  [PASS] Meaningful transformation — Beyond the added CTA, the phrasing throughout was reworded, showing more than a trivial copy.
+  [PASS] Length/scope sanity — The resulting script is only slightly longer than the original, consistent with just adding a short CTA and rewording.
+  Confidence: 0.90
+  Overall: PASS
+
+Prompt: "Translate to Spanish"
+  [PASS] Intent match — The script was fully translated into Spanish as requested.
+  [PASS] Coherence & grammar — The Spanish text is grammatically correct and reads coherently.
+  [PASS] Information preservation — All steps, commands, and details from the original are preserved in the translation.
+  [PASS] Meaningful transformation — The entire text is rendered in a different language, which is a substantial transformation, not a trivial reword.
+  [PASS] Length/scope sanity — The translated script is comparable in length and structure to the original, with no truncation or excessive padding.
+  Confidence: 0.95
+  Overall: PASS
+
+Prompt: "Make this script more concise"
+  [PASS] Intent match — The script is noticeably shorter and tighter while retaining all steps, matching the 'more concise' request.
+  [PASS] Coherence & grammar — The rewritten script is grammatically correct and flows smoothly, even correcting original errors like 'px playwright' to 'npx playwright'.
+  [PASS] Information preservation — All key steps (folder creation, VS Code, terminal, npm init, TypeScript, tests folder, GitHub Actions, browsers, running tests, Firefox failure) are preserved.
+  [PASS] Meaningful transformation — Sentences are restructured and combined (e.g., merging folder creation and naming) rather than just trivially reworded.
+  [PASS] Length/scope sanity — The result is shorter than the original in a reasonable proportion, consistent with a conciseness request, and not truncated.
+  Confidence: 0.90
+  Overall: PASS
+
+Summary: 4/4 prompts passed all criteria.

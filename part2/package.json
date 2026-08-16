@@ -1,0 +1,17 @@
+{
+  "name": "trupeer-qa-part2",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright E2E test suite for Trupeer (Part 2 of QA assignment)",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "@types/node": "^22.0.0",
+    "dotenv": "^16.4.5",
+    "typescript": "^5.5.0"
+  }
+}

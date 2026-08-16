@@ -1,0 +1,48 @@
+LLM Judge — CI Gating & Human Disagreement Notes
+=================================================
+
+What confidence number would I trust enough to block a build?
+----------------------------------------------------------------
+The "confidence" score is just the AI telling us how sure IT feels about its
+own answer — it's not proof that the answer is actually correct. So I
+wouldn't use it as a single magic number like "block if confidence < 0.8."
+That gives a false sense of precision.
+
+Instead, think of it as two separate signals working together — did it say
+PASS or FAIL, and was it sure or unsure:
+
+  - FAIL + the AI is confident  -> block the build. This is the trustworthy
+    case: the AI found a real problem and is sure about it.
+
+  - FAIL + the AI is NOT confident -> don't block automatically. Flag it for
+    a person to glance at instead. If even the AI isn't sure, it's probably
+    a borderline or confusing case, not a real bug — auto-blocking on these
+    just trains the team to stop trusting red builds.
+
+  - PASS -> let the build go through either way. But if it passed while the
+    AI seemed unsure, quietly log it so someone can spot-check it later.
+
+It's a bit like a spell-checker: if it's very sure a word is wrong, it flags
+it right away; if it's unsure, it just underlines it for you to glance at
+later — it doesn't stop you from saving the document. I'd start around
+"confident = 0.8 or higher" and adjust that number after watching it in
+action for a few weeks.
+
+What if the AI judge and a human reviewer disagree?
+-------------------------------------------------------
+The human always wins. The AI is a quick first-pass helper, not the final
+word. In practice:
+
+1. Write down every disagreement — what the script said, what was asked,
+   what the AI decided, and what the human decided. Don't just argue about
+   it once and move on.
+2. Don't react to just one disagreement. Wait and see if there's a pattern
+   — is the AI always too easy-going on the same kind of question? That
+   usually means our instructions to the AI were unclear, not that the AI
+   is broken.
+3. If there's a pattern, fix the instructions we give the AI first. That's
+   a more lasting fix than fiddling with a confidence number.
+4. If one specific question keeps causing arguments even after we've
+   clarified the instructions, it's probably not a good fit for AI
+   judgment at all — replace it with a simple, plain rule in code instead
+   (something the computer can check directly, no guessing involved).
